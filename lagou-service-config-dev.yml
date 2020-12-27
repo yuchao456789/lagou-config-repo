@@ -8,10 +8,12 @@ spring:
     from: 517309804@qq.com # 发送邮件的地址，和上面username一致
 abc:
   config: 34566
-  
 
-
-mysql:
-  url: dev-http://localhost:3306/db600
-lagou:
-  message: hello lagou,600
+spring:
+  datasource:
+    name: lagou
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/laogou?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&failOverReadOnly=false
+    username: root
+    password: 123456
