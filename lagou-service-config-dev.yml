@@ -17,3 +17,24 @@ spring:
     url: jdbc:mysql://localhost:3306/laogou?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&failOverReadOnly=false
     username: root
     password: 123456
+    cloud:
+      config:
+        name: lagou-service-config  #配置文件名称
+        profile: dev  #后缀名称
+        label: master #分支名称
+        uri: http://localhost:9006 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://LagouCloudEurekaServerA:8761/eureka,http://LagouCloudEurekaServerB:8762/eureka
+  instance:
+    prefer-ip-address: true 
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+    metadata-map:
+      cluster: cl1
+      region: rn1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
