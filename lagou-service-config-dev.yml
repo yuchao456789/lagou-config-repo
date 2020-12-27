@@ -11,16 +11,14 @@ abc:
 
 spring:
   datasource:
-    name: lagou
-    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/laogou?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&failOverReadOnly=false
     username: root
     password: 123456
-    cloud:
-      config:
-        name: lagou-service-config  #配置文件名称
-        profile: dev  #后缀名称
-        label: master #分支名称
-        uri: http://localhost:9006 
+  cloud:
+    config:
+      name: lagou-service-config  #配置文件名称
+      profile: dev  #后缀名称
+      label: master #分支名称
+      uri: http://localhost:9006 
 
