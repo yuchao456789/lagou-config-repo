@@ -8,7 +8,6 @@ spring:
     from: 517309804@qq.com # 发送邮件的地址，和上面username一致
 abc:
   config: 34566
-
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
