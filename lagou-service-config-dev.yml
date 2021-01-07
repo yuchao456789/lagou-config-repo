@@ -1,6 +1,6 @@
 validate:
   minute: 1
-  times: 10
+  times: 1000
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
